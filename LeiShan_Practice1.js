@@ -1,36 +1,36 @@
 
-function Add() {
+function Add_new() {
     
-    sessionStorage.setItem("name", document.getElementById("name").value);
-    sessionStorage.setItem("phone", document.getElementById("phone").value);
+    sessionStorage.setItem("name", document.getElementById("iname").value);
+    sessionStorage.setItem("phone", document.getElementById("iphone").value);
 
     var table = document.getElementById("myTable");
     var row = table.insertRow(1);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
-    cell1.innerHTML = sessionStorage.name;
-    cell2.innerHTML = sessionStorage.phone;
+    cell1.innerHTML = sessionStorage.getItem("name");
+    cell2.innerHTML = sessionStorage.getItem("phone");
     cell3.innerHTML = "<td><a class='add' title='Add data-toggle='tooltip'><i class='material-icons'>&#xE03B;</i></a>"+
         "<a class='edit' title='Edit' data-toggle='tooltip'><i class='material-icons'>&#xE254;</i></a>"+
         "<a class='delete' title='Delete' data-toggle='tooltip'><i class='material-icons'>&#xE872;</i></a>"+
         "</td>";
 
-    document.getElementById("name").value="";
-    document.getElementById("phone").value="";
+    document.getElementById("iname").value="";
+    document.getElementById("iphone").value="";
 
 }
 
 function Cancel() {
-    document.getElementById("name").value="";
-    document.getElementById("phone").value="";
+    document.getElementById("iname").value="";
+    document.getElementById("iphone").value="";
 
 }
 
 $(document).ready(function(){
 
-	$('[data-toggle="tooltip"]').tooltip();
-	var actions = $("table td:last-child").html();
+	//$('[data-toggle="tooltip"]').tooltip();
+	//var actions = $("table td:last-child").html();
 
 	// Add row on add button click
 	$(document).on("click", ".add", function(){
