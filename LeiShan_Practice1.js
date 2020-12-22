@@ -144,5 +144,6 @@ function getTable(){
 		html+="</tbody>";
 		html+="</table>";
 	document.getElementById("myTablediv").innerHTML = html;
+	//test
 
 }
